@@ -1,0 +1,99 @@
+﻿<Window x:Name="frmMain" x:Class="休講案内アプリケーション.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="東京工科大学 八王子 休講案内" Height="532.286" Width="698.559" Loaded="frmMain_Loaded" MinHeight="329" MinWidth="396">
+
+    <Window.Resources>
+
+        <!--ウィンドウ上の全ての TextBox に適用する Style-->
+        <Style x:Key="{x:Type TextBox}" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="#444444"/>
+            <Setter Property="Foreground" Value="#F0F0F0"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="Height" Value="28"/>
+        </Style>
+
+        <!--ウィンドウ上の全ての PasswordBox に適用する Style-->
+        <Style x:Key="{x:Type PasswordBox}" TargetType="{x:Type PasswordBox}">
+            <Setter Property="Background" Value="#444444"/>
+            <Setter Property="Foreground" Value="#F0F0F0"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="Height" Value="28"/>
+        </Style>
+
+        <!--ウィンドウ上の全ての Label に適用する Style-->
+        <Style x:Key="{x:Type Label}" TargetType="{x:Type Label}">
+            <Setter Property="Foreground" Value="#F0F0F0"/>
+        </Style>
+
+        <Style x:Key="{x:Type CheckBox}" TargetType="{x:Type CheckBox}">
+            <Setter Property="Foreground" Value="#F0F0F0"/>
+        </Style>
+
+        <!--ウィンドウ上の全ての Button に適用する Style-->
+        <Style x:Key="{x:Type Button}" TargetType="{x:Type Button}">
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="Height" Value="28" />
+            <Setter Property="Foreground" Value="#F0F0F0"/>
+            <Setter Property="Background" Value="#0593E2"/>
+        </Style>
+
+        <Style x:Key="{x:Type Menu}" TargetType="{x:Type Menu}">
+            <Setter Property="Background" Value="#444444"/>
+        </Style>
+
+        <Style x:Key="{x:Type MenuItem}" TargetType="{x:Type MenuItem}">
+            <Setter Property="Background" Value="#444444"/>
+            <Setter Property="BorderBrush" Value="#444444"/>
+            <Setter Property="Foreground" Value="#F0F0F0"/>
+        </Style>
+
+        <Style x:Key="{x:Type StatusBar}" TargetType="{x:Type StatusBar}">
+            <Setter Property="Background" Value="#444444"/>
+            <Setter Property="BorderBrush" Value="#444444"/>
+            <Setter Property="Foreground" Value="#F0F0F0"/>
+        </Style>
+
+        <!--OK Button に適用する Style-->
+        <Style x:Key="okButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="Height" Value="28"/>
+            <Setter Property="Foreground" Value="#0000FF"/>
+            <Setter Property="Background" Value="#FFFF00"/>
+        </Style>
+
+    </Window.Resources>
+
+    <Grid Background="#FF2B2A2A">
+        <Menu Height="18" VerticalAlignment="Top" Background="#FF444444" Foreground="White" Grid.ColumnSpan="2">
+            <MenuItem x:Name="menuFile" Header="ファイル(_F)" Foreground="White">
+                <MenuItem x:Name="menuClose" Header="閉じる" Click="menuClose_Click"/>
+            </MenuItem>
+            <MenuItem x:Name="menuNotify" Header="通知(_N)" Foreground="White">
+                <MenuItem x:Name="menuLogin" Header="ログイン" Click="menuLogin_Click" />
+            </MenuItem>
+            <MenuItem x:Name="menuView" Header="表示(_V)" Foreground="White">
+                <MenuItem x:Name="menuViewFree" Header="フリー表示" IsCheckable="True" Checked="menuViewFree_Checked"/>
+                <MenuItem x:Name="menuViewOne" Header="1カラム表示" IsCheckable="True" Checked="menuViewOne_Checked"/>
+                <MenuItem x:Name="menuViewTwo" Header="2カラム表示" IsCheckable="True" Checked="menuViewTwo_Checked"/>
+                <MenuItem x:Name="menuViewThree" Header="3カラム表示" IsCheckable="True" Checked="menuViewThree_Checked"/>
+                <MenuItem x:Name="menuViewFour" Header="4カラム表示" IsCheckable="True" Checked="menuViewFour_Checked"/>
+            </MenuItem>
+            <MenuItem x:Name="menuInfo" Header="ヘルプ(_H)" Foreground="White">
+                <MenuItem x:Name="menuInfoVersion" Header="バージョン情報" Click="menuInfoVersion_Click"/>
+            </MenuItem>
+        </Menu>
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled" Margin="0,114,0,0.4">
+
+            <WrapPanel x:Name="WrapP" Margin="0,0,0,0"/>
+        </ScrollViewer>
+        <CheckBox x:Name="chkCS" Content="コンピュータサイエンス学科" HorizontalAlignment="Left" Margin="21,38,0,0" VerticalAlignment="Top" Checked="chkCS_Checked"/>
+        <CheckBox x:Name="chkMS" Content="メディア学科" HorizontalAlignment="Left" Margin="21,58,0,0" VerticalAlignment="Top" Checked="chkMS_Checked"/>
+        <CheckBox x:Name="chkBS" Content="応用生物学科" HorizontalAlignment="Left" Margin="21,78,0,0" VerticalAlignment="Top" Checked="chkBS_Checked"/>
+        <CheckBox x:Name="chkOne" Content="1年次開講科目" HorizontalAlignment="Left" Margin="182,29,0,0" VerticalAlignment="Top" Checked="chkOne_Checked"/>
+        <CheckBox x:Name="chkTwo" Content="2年次開講科目" HorizontalAlignment="Left" Margin="182,49,0,0" VerticalAlignment="Top" Checked="chkTwo_Checked"/>
+        <CheckBox x:Name="chkThree" Content="3年次開講科目" HorizontalAlignment="Left" Margin="182,69,0,0" VerticalAlignment="Top" Checked="chkThree_Checked"/>
+        <CheckBox x:Name="chkFour" Content="4年次開講科目" HorizontalAlignment="Left" Margin="182,89,0,0" VerticalAlignment="Top" Checked="chkFour_Checked"/>
+        <Button x:Name="btnOK" Content="絞り込み" Margin="0,71,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="64" Click="btnOK_Click"/>
+    </Grid>
+</Window>

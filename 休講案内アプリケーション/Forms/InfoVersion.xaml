@@ -1,0 +1,91 @@
+﻿<Window x:Class="休講案内アプリケーション.InfoVersion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="休講案内アプリケーション のバージョン情報" Height="365" Width="560" ResizeMode="NoResize" Loaded="Window_Loaded">
+
+    <Window.Resources>
+
+        <!--ウィンドウ上の全ての TextBox に適用する Style-->
+        <Style x:Key="{x:Type TextBox}" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="#444444"/>
+            <Setter Property="Foreground" Value="#F0F0F0"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="Height" Value="28"/>
+        </Style>
+
+        <Style x:Key="{x:Type TextBlock}" TargetType="{x:Type TextBlock}">
+            <Setter Property="Foreground" Value="#F0F0F0"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="Height" Value="28"/>
+        </Style>
+
+        <!--ウィンドウ上の全ての PasswordBox に適用する Style-->
+        <Style x:Key="{x:Type PasswordBox}" TargetType="{x:Type PasswordBox}">
+            <Setter Property="Background" Value="#444444"/>
+            <Setter Property="Foreground" Value="#F0F0F0"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="Height" Value="28"/>
+        </Style>
+
+        <!--ウィンドウ上の全ての Label に適用する Style-->
+        <Style x:Key="{x:Type Label}" TargetType="{x:Type Label}">
+            <Setter Property="Foreground" Value="#F0F0F0"/>
+        </Style>
+
+        <Style x:Key="{x:Type CheckBox}" TargetType="{x:Type CheckBox}">
+            <Setter Property="Foreground" Value="#F0F0F0"/>
+        </Style>
+
+        <!--ウィンドウ上の全ての Button に適用する Style-->
+        <Style x:Key="{x:Type Button}" TargetType="{x:Type Button}">
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="Height" Value="28" />
+            <Setter Property="Foreground" Value="#F0F0F0"/>
+            <Setter Property="Background" Value="#0593E2"/>
+        </Style>
+
+        <!--OK Button に適用する Style-->
+        <Style x:Key="okButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="Height" Value="28"/>
+            <Setter Property="Foreground" Value="#0000FF"/>
+            <Setter Property="Background" Value="#FFFF00"/>
+        </Style>
+
+    </Window.Resources>
+
+    <Grid Background="#FF323232">
+        <Button x:Name="btnOK" Content="OK" HorizontalAlignment="Left" Margin="454,281,0,0" VerticalAlignment="Top" Width="75" Click="btnOK_Click"/>
+        <Image HorizontalAlignment="Left" Height="124" Margin="20,24,0,0" VerticalAlignment="Top" Width="124" Source="https://www.nxtg-t.net/teulogo.jpg" Stretch="Fill"/>
+        <TextBlock FontSize="36" Margin="149,24,10,246" TextWrapping="NoWrap" Height="Auto" Text="{Binding ProductName}" TextAlignment="Center"/>
+        <TextBlock FontSize="18" Margin="149,95,34,195" Text="{Binding Version}" Height="Auto" TextAlignment="Right"/>
+        <TextBlock HorizontalAlignment="Left" Margin="20,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="84" Width="252">
+            Developed by Sorarinu int.
+            <LineBreak/>
+            　　　　<Hyperlink NavigateUri="https://www.nxtg-t.net/" Name="homepagelink" RequestNavigate="homepagelink_RequestNavigate">
+                        https://www.nxtg-t.net/
+                    </Hyperlink> 
+            <LineBreak/>
+            　　　　Twitter: 
+                    <Hyperlink NavigateUri="https://twitter.com/int_sorarinu" Name="twitterlink" RequestNavigate="twitterlink_RequestNavigate">
+                        @int_sorarinu
+                    </Hyperlink>
+        </TextBlock>
+        <TextBlock Margin="10,282,116,26" TextWrapping="NoWrap" Width="429" Text="{Binding Copyright}"/>
+        <Separator HorizontalAlignment="Left" Height="100" Margin="233,163,0,0" VerticalAlignment="Top" Width="84" RenderTransformOrigin="0.5,0.5">
+            <Separator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Separator.RenderTransform>
+        </Separator>
+        <TextBlock HorizontalAlignment="Left" Margin="292,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="84" Width="252">
+            本ソフトウェアはクローズドソースとなっており、無断改変・再配布・複製・リバースエンジニアリング・逆アセンブル等の行為を固く禁じます。
+            <LineBreak/>
+            質問・要望等はTwitterより受け付けております。
+        </TextBlock>
+    </Grid>
+</Window>
