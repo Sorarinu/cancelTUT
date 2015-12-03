@@ -345,17 +345,6 @@ namespace 休講案内アプリケーション
 
             getKyukou(param);
         }
-
-        /// <summary>
-        /// ログイン
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void menuLogin_Click(object sender, RoutedEventArgs e)
-        {
-            LoginWindow frm = new LoginWindow();
-            frm.ShowDialog();
-        }
     }
 }
 
