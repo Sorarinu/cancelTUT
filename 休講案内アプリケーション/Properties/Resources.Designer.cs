@@ -61,7 +61,7 @@ namespace 休講案内アプリケーション.Properties {
         }
         
         /// <summary>
-        ///   kyukou に類似しているローカライズされた文字列を検索します。
+        ///    に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Database {
             get {
@@ -70,7 +70,7 @@ namespace 休講案内アプリケーション.Properties {
         }
         
         /// <summary>
-        ///   huh075came453 に類似しているローカライズされた文字列を検索します。
+        ///    に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Password {
             get {
@@ -79,7 +79,7 @@ namespace 休講案内アプリケーション.Properties {
         }
         
         /// <summary>
-        ///   nxtg-t.net に類似しているローカライズされた文字列を検索します。
+        ///    に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string ServerHost {
             get {
@@ -88,7 +88,7 @@ namespace 休講案内アプリケーション.Properties {
         }
         
         /// <summary>
-        ///   kyukou に類似しているローカライズされた文字列を検索します。
+        ///    に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string UserID {
             get {
